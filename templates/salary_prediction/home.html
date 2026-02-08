@@ -3,19 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet"href="{%static 'css/style.css'%}">
+    <title>Salary Prediction</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <div>
-    <h1>Salary Prediction System</h1>
+        <h1>Salary Prediction System</h1>
 
-    <form method="POST", action="/predict/">
-        {% csrf_token %}
-        {{ from.as_p }}
-        <button type="submit">Predict Salary</button>
-    </form>
-</div>
+        <form method="POST" action="/predict/">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Predict Salary</button>
+        </form>
+    </div>
 </body>
 </html>

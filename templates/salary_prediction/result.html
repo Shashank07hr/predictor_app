@@ -3,17 +3,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet"href="{%static 'css/style.css'%}">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <div>
         <h1>Prediction Result</h1>
+
         <h2>Experience: {{ experience }} years</h2>
-        <h2>Predicted Salary: ₹{{salary}}</h2>
-        <img src="{{plot_url}}" alt="Salary Prediction" width="600"><br><br> 
-        
+        <h2>Predicted Salary: ₹ {{ salary }}</h2>
+
+        {% if plot_url %}
+            <img src="{{ plot_url }}" alt="Salary Prediction" width="600">
+        {% endif %}
+
+        <br><br>
         <a href="/">Predict Again</a>
     </div>
 </body>
